@@ -12,7 +12,7 @@ HUBOT_SLACK_EXIT_ON_DISCONNECT='true'
 
 ## brain
 
-HUBOT_FILE_BRAIN_PATH='~/arc-penny/brain.db'
+HUBOT_FILE_BRAIN_PATH='brain.db'
 
 ## google shit
 
