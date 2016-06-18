@@ -33,4 +33,8 @@ export HUBOT_IMGUR_CLIENTID='f4facc7cbb59177'
 
 export HUBOT_AUTH_ADMIN='U04AMBT11,U0489BMSF,U1AL663F0,U0489C5N9,U048H7R95'
 
+while [ -f 'bin/hubot' ]; do
+
 sh bin/hubot
+
+done
