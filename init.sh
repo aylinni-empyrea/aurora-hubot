@@ -12,7 +12,7 @@ export HUBOT_SLACK_EXIT_ON_DISCONNECT='true'
 
 ## brain
 
-export HUBOT_FILE_BRAIN_PATH="C:\ProgramData\msys64\home\Administrator\arc-penny\brain.db"
+export FILE_BRAIN_PATH="C:\ProgramData\msys64\home\Administrator\arc-penny\brain.db"
 
 ## google shit
 
