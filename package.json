@@ -6,7 +6,6 @@
   "description": "I'm combat ready!",
   "dependencies": {
     "hubot": "^2.19.0",
-    "hubot-file-brain": "git+https://github.com/bouzuya/hubot-file-brain.git",
     "hubot-google-images": "^0.2.6",
     "hubot-google-translate": "^0.2.0",
     "hubot-help": "^0.2.0",
