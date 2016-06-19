@@ -4,5 +4,6 @@
   "hubot-google-translate",
   "hubot-maps",
   "hubot-reload-scripts",
-  "hubot-youtube"
+  "hubot-youtube",
+  "hubot-plusplus"
 ]
