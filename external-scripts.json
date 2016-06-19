@@ -2,5 +2,6 @@
   "hubot-help",
   "hubot-google-images",
   "hubot-google-translate",
-  "hubot-maps"
+  "hubot-maps",
+  "hubot-reload-scripts"
 ]
