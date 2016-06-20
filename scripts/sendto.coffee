@@ -2,11 +2,12 @@
 #   Send To
 #
 # Commands:
-#   hubot say in <channel> <message> - Make the hubot post <message> in <channel>
+#
 
 module.exports = (robot) ->
 
   robot.respond /say in\s+(\S+)\s+(.*)/i, (res) ->
+   if res.message.room is "pennybot"
     room = res.match[1]
     message = res.match[2]
 
