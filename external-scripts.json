@@ -1,9 +1,10 @@
 [
-  "hubot-help",
+   "hubot-help",
   "hubot-google-images",
   "hubot-google-translate",
   "hubot-maps",
   "hubot-reload-scripts",
   "hubot-youtube",
+  "hubot-suggest",
   "hubot-plusplus"
 ]
