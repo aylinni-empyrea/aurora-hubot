@@ -16,6 +16,7 @@
     "hubot-scripts": "^2.17.2",
     "hubot-slack": "^3.4.2",
     "hubot-slack-reaction": "0.0.2",
+    "hubot-suggest": "git+https://github.com/deadsurgeon42/hubot-suggest.git",
     "hubot-youtube": "^1.0.2",
     "slack-client": "^2.0.6"
   },
