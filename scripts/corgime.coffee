@@ -9,7 +9,7 @@
 #
 # Commands:
 #   hubot corgi me - Receive a corgi
-#   hubot corgi bomb N - get N corgis
+#   hubot corgi bomb _number_ - Receive _number_ corgis
 #
 # Author:
 #   alexgodin
