@@ -19,7 +19,7 @@ url = require("url")
 module.exports = (robot) ->
   robot.respond /nsfw gif/i, (msg) ->
     search = escape(msg.match[1])
-    msg.http('http://www.reddit.com/r/nsfw_gif.json')
+    msg.http('https://www.reddit.com/user/RyanSammy/m/gifs/top.json?t=week?limit=100')
       .get() (err, res, body) ->
         result = JSON.parse(body)
 
@@ -41,10 +41,19 @@ module.exports = (robot) ->
         picked_url = urls[rnd]
 
         parsed_url = url.parse(picked_url)
-        if parsed_url.host == "imgur.com"
-          parsed_url.host = "i.imgur.com"
-          parsed_url.pathname = parsed_url.pathname + ".gif"
-
-          picked_url = url.format(parsed_url)
-
+#        if parsed_url.host == "imgur.com"
+#          parsed_url.host = "i.imgur.com"
+#          parsed_url.pathname = parsed_url.pathname + ".gif"
+#
+#          picked_url = url.format(parsed_url)
+        
+        # switch parsed_url.host
+            # when "imgur.com"
+                # parsed_url.host = "i.imgur.com"
+                # parsed_url.pathname = parsed_url.pathname + ".gif"
+            # when "gfycat.com"
+                # parsed_url.host = "giant.gfycat.com"
+                # parsed_url.pathname = parsed_url.pathname + ".gif"
+                
+        picked_url = url.format(parsed_url)
         msg.send picked_url
