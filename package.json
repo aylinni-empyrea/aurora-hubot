@@ -7,6 +7,7 @@
   "dependencies": {
     "hubot": "^2.19.0",
     "hubot-answers": "git+https://github.com/deadsurgeon42/hubot-answers.git",
+    "hubot-brain-inspect": "0.0.1",
     "hubot-flipanything": "^1.0.2",
     "hubot-google-images": "^0.2.6",
     "hubot-google-translate": "^0.2.0",

@@ -1,5 +1,6 @@
 [
-   "hubot-reddit",
+   "hubot-brain-inspect",
+  "hubot-reddit",
   "hubot-help",
   "hubot-google-images",
   "hubot-google-translate",
