@@ -18,7 +18,7 @@ url = require("url")
 module.exports = (robot) ->
   robot.respond /aww/i, (msg) ->
     search = escape(msg.match[1])
-    msg.http('http://www.reddit.com/r/aww.json')
+    msg.http('https://www.reddit.com/user/sjxp/m/cutes.json?limit=100')
       .get() (err, res, body) ->
         result = JSON.parse(body)
 
@@ -34,11 +34,4 @@ module.exports = (robot) ->
         rnd = Math.floor(Math.random()*urls.length)
         picked_url = urls[rnd]
 
-        parsed_url = url.parse(picked_url)
-        if parsed_url.host == "imgur.com"
-          parsed_url.host = "i.imgur.com"
-          parsed_url.pathname = parsed_url.pathname + ".jpg"
-
-          picked_url = url.format(parsed_url)
-
-        msg.send picked_url
+        msg.send url.format(picked_url)
