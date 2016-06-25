@@ -26,8 +26,8 @@ module.exports = (robot) ->
         urls = [ ]
 
         if msg.message.room != "nsfw" and msg.message.room != "porn"
-         msg.send "Sorry, I can't post anything nsfw here!"
-         return
+          msg.send "Sorry, I can't post anything nsfw here!"
+          return
 
         for child in result.data.children
           if child.data.domain != "self.nsfw_gif"
@@ -46,7 +46,7 @@ module.exports = (robot) ->
 #          parsed_url.pathname = parsed_url.pathname + ".gif"
 #
 #          picked_url = url.format(parsed_url)
-        
+
         # switch parsed_url.host
             # when "imgur.com"
                 # parsed_url.host = "i.imgur.com"
@@ -54,6 +54,6 @@ module.exports = (robot) ->
             # when "gfycat.com"
                 # parsed_url.host = "giant.gfycat.com"
                 # parsed_url.pathname = parsed_url.pathname + ".gif"
-                
+
         picked_url = url.format(parsed_url)
         msg.send picked_url

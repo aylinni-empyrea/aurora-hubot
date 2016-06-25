@@ -25,7 +25,7 @@ module.exports = (robot) ->
     if data
       robot.brain.mergeData JSON.parse(data)
   catch error
-      console.log('Unable to read file', error) unless error.code is 'ENOENT'
+    console.log('Unable to read file', error) unless error.code is 'ENOENT'
 
   robot.brain.on 'save', (data) ->
     fs.writeFileSync brainPath, JSON.stringify(data), 'utf-8'
