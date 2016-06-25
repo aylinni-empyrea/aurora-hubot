@@ -6,3 +6,4 @@ brain.db
 .Trash*
 vars.sh
 *.js
+boot.sh
