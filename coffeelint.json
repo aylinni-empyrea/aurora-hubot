@@ -5,7 +5,7 @@
   },
   "line_endings" : {
     "value" : "unix",
-    "level" : "error"
+    "level" : "ignore"
   },
   "max_line_length" : {
     "level" : "ignore"
