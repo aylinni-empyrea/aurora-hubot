@@ -1,4 +1,16 @@
-# Configures the plugin
+# Description:
+#
+#  Grab a nsfw pic from titsnarse.co.uk
+#
+# Dependencies:
+#
+#  none
+#
+# Commands:
+#
+#  hubot nsfw pic
+#
+
 module.exports = (robot) ->
   # waits for the string "hubot nsfw" or "hubot hook me up" to occur
   robot.respond /nsfw pic/i, (msg) ->
