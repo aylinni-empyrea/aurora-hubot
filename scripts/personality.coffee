@@ -69,7 +69,7 @@ module.exports = (robot) ->
   robot.hear /:penny:$/i, (msg) ->
     msg.send msg.random pennyiconQuotes
 
-  robot.hear /@penny/i, (msg) ->
+  robot.hear /^@penny$/i, (msg) ->
     msg.send msg.random notificationQuotes
 
   robot.hear /penny stop|penny enough/i, (msg) ->
