@@ -14,7 +14,7 @@
     "hubot-google-translate": "^0.2.0",
     "hubot-help": "^0.2.0",
     "hubot-maps": "0.0.2",
-    "hubot-plusplus": "^1.2.5",
+    "hubot-plusplus": "github:ajacksified/hubot-plusplus",
     "hubot-pugme": "^0.1.0",
     "hubot-reddit": "0.0.1",
     "hubot-reload-scripts": "git+https://github.com/deadsurgeon42/hubot-reload-scripts.git",
