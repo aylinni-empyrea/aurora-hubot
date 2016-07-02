@@ -34,4 +34,4 @@ module.exports = (robot) ->
         rnd = Math.floor(Math.random()*urls.length)
         picked_url = urls[rnd]
 
-        msg.send url.format(picked_url)
+        msg.send ':420: ' + url.format(picked_url) + ' :420:'
