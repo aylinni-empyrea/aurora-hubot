@@ -18,7 +18,7 @@ url = require("url")
 module.exports = (robot) ->
   robot.respond /mlg( me)?/i, (msg) ->
     search = escape(msg.match[1])
-    msg.http('https://www.reddit.com/r/montageparodies/top/week.json?limit=100')
+    msg.http('https://www.reddit.com/r/montageparodies/top.json?sort=top&t=week&limit=100')
       .get() (err, res, body) ->
         result = JSON.parse(body)
 
