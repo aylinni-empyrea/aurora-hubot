@@ -19,7 +19,10 @@ config =
   default_month: 'current'
   # Footer is only appended to this month calls
   footer: """
+          Vote for us over at http://bit.ly/vote4aurora!
           > *Remember!* The top voter of each month will receive the exclusive *[Top Voter]* rank!
+
+          See our forum for more details.
           """
 
 check_url_stub = "https://terraria-servers.com/api/?object=servers&element=voters&key=#{process.env.HUBOT_TERRARIASERVERS_API_KEY}&format=json&limit=#{config.max_voters}"
