@@ -7,3 +7,4 @@ brain.db
 *.sh
 *.js
 typescript
+*.sublime*
