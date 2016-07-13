@@ -6,7 +6,7 @@
   "description": "I'm combat ready!",
   "dependencies": {
     "hubot": "^2.19.0",
-    "hubot-answers": "git+https://github.com/deadsurgeon42/hubot-answers.git",
+    "hubot-answers": "github:deadsurgeon42/hubot-answers",
     "hubot-brain-inspect": "0.0.1",
     "hubot-calculator": "^0.4.0",
     "hubot-decide": "^1.0.1",
@@ -18,11 +18,11 @@
     "hubot-plusplus": "github:ajacksified/hubot-plusplus",
     "hubot-pugme": "^0.1.0",
     "hubot-reddit": "0.0.1",
-    "hubot-reload-scripts": "git+https://github.com/deadsurgeon42/hubot-reload-scripts.git",
+    "hubot-reload-scripts": "github:deadsurgeon42/hubot-reload-scripts",
     "hubot-scripts": "^2.17.2",
     "hubot-slack": "^3.4.2",
     "hubot-slack-reaction": "0.0.2",
-    "hubot-suggest": "git+https://github.com/deadsurgeon42/hubot-suggest.git",
+    "hubot-suggest": "github:deadsurgeon42/hubot-suggest.git",
     "hubot-youtube": "^1.0.2",
     "slack-client": "^2.0.6"
   },
