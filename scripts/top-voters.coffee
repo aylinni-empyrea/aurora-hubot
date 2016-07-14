@@ -19,7 +19,7 @@ config =
   default_month: 'current'
   # Footer is only appended to this month calls
   footer: """
-          Vote for us over at http://bit.ly/vote4aurora!
+          ★ Vote for us over at http://bit.ly/vote4aurora! ★
           > *Remember!* The top voter of each month will receive the exclusive *[Top Voter]* rank!
 
           See https://aurora-terraria.org/threads/voting-top-voter-rank.4909/ for more details.
