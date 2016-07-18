@@ -11,7 +11,7 @@
     "hubot-calculator": "^0.4.0",
     "hubot-decide": "^1.0.1",
     "hubot-flipanything": "^1.0.2",
-    "hubot-google-images": "^0.2.6",
+    "hubot-google-images": "github:deadsurgeon42/hubot-google-images",
     "hubot-google-translate": "^0.2.0",
     "hubot-help": "^0.2.0",
     "hubot-maps": "0.0.2",
