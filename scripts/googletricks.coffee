@@ -18,6 +18,8 @@ request = require 'request'
 
 #acceptedColors = [ 'black', 'blue', 'brown', 'gray', 'green', 'pink', 'purple', 'teal', 'white', 'yellow' ]
 
+nsfw_rooms = ['nsfw']
+
 random = (a) -> return a[Math.floor(Math.random() * a.length)]
 
 pullAFast = (url, q, id, key, proxy, cb, animated) ->
@@ -51,6 +53,7 @@ module.exports = (robot) ->
 imageMe = (msg, query, animated, faces, cb) ->
   cb = animated if typeof animated is 'function'
   cb = faces if typeof faces is 'function'
+
   googleCseId = process.env.HUBOT_GOOGLE_CSE_ID
   if googleCseId
     # Using Google Custom Search API
@@ -76,6 +79,8 @@ imageMe = (msg, query, animated, faces, cb) ->
 
     q.cx = googleCseId
     q.key = googleApiKey
+
+    q.safe = 'off' if msg.message.room in nsfw_rooms
 
     opts =
       qs: q
