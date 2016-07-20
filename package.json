@@ -9,6 +9,7 @@
     "hubot-answers": "github:deadsurgeon42/hubot-answers",
     "hubot-brain-inspect": "0.0.1",
     "hubot-calculator": "^0.4.0",
+    "hubot-currency": "^1.0.1",
     "hubot-decide": "^1.0.1",
     "hubot-flipanything": "^1.0.2",
     "hubot-google-translate": "^0.2.0",
