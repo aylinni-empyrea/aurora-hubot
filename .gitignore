@@ -4,8 +4,7 @@ node_modules
 debug.log
 brain.db
 .Trash*
-*.sh
 *.js
 typescript
 *.sublime*
-*.bat
+vars
