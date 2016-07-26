@@ -1,1 +1,1 @@
-while 1; do bin/hubot $@; done
+while true; do bin/hubot $@; done
