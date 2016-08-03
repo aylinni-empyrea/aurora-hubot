@@ -7,4 +7,5 @@ brain.db
 *.js
 typescript
 *.sublime*
+vars.bat
 vars
