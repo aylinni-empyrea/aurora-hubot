@@ -9,6 +9,7 @@
   "hubot-youtube",
   "hubot-plusplus",
   "hubot-flipanything",
+  "hubot-slack-api",
   "hubot-answers",
   "hubot-decide",
   "hubot-currency"
