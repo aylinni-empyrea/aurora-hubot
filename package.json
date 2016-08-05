@@ -26,7 +26,8 @@
     "hubot-suggest": "github:deadsurgeon42/hubot-suggest.git",
     "hubot-youtube": "^1.0.2",
     "request": "^2.73.0",
-    "slack-client": "^2.0.6"
+    "slack-client": "^2.0.6",
+    "truncate": "^2.0.0"
   },
   "engines": {
     "node": "0.10.x"
