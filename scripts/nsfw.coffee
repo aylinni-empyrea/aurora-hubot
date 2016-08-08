@@ -22,4 +22,4 @@ module.exports = (robot) ->
           # passes back the image source
           msg.send 'http://titsnarse.co.uk'+JSON.parse(body).src
     else
-      msg.send 'I can\'t post nsfw here! :o'
+      msg.send 'I can\'t post nsfw here! :angry:'
