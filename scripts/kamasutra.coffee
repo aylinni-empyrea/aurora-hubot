@@ -1,3 +1,9 @@
+# Description:
+#   Nobody needs to know about this
+#
+# Commands:
+#
+
 cheerio = require 'cheerio'
 request = require 'request'
 
