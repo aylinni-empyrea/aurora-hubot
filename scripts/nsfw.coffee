@@ -14,7 +14,7 @@
 module.exports = (robot) ->
   # waits for the string "hubot nsfw" or "hubot hook me up" to occur
   robot.respond /nsfw pic/i, (msg) ->
-    if msg.message.room is "nsfw"
+    if msg.message.room is "nsfw" or "porn"
       # Configures the url of a remote server
       msg.http('http://titsnarse.co.uk/random_json.php')
         # and makes an http get call
