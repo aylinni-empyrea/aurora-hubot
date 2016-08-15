@@ -49,14 +49,23 @@ module.exports = (robot) ->
 
               ret.attachments[0].fields.push z
 
-          console.log result.Image
+          # console.log result.Image
           if result.Image isnt "" or undefined
             ret.attachments[0].image_url = result.Image
 
+          ### old method
           robot.emit 'slack.attachment', {
             channel: res.message.room || res.envelope.room
             content: ret.attachments
           }
+          ###
+
+          final =
+            channel: res.message.room || res.envelope.room
+            unfurl_links: false
+            attachments: ret.attachments
+
+          res.send final
 
         else
           res.send """
