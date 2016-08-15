@@ -2,4 +2,4 @@
 
 call vars.bat
 
-bin\hubot.cmd $*
+bin\hubot.cmd %* 
