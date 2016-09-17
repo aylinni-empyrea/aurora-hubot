@@ -1,3 +1,15 @@
+# Description:
+#
+#  Searches for a definition in DDG Instant Answers
+#
+# Dependencies:
+#
+#  request, truncate
+#
+# Commands:
+#
+#  hubot define <string>
+
 request = require 'request'
 truncate = require 'truncate'
 
