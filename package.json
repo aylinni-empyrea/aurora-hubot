@@ -18,7 +18,7 @@
     "hubot-google-translate": "^0.2.0",
     "hubot-help": "^0.2.0",
     "hubot-maps": "0.0.2",
-    "hubot-mimic": "^0.1.2",
+    "hubot-mimic": "github:jobbogamer/hubot-mimic",
     "hubot-plusplus": "github:ajacksified/hubot-plusplus",
     "hubot-pugme": "^0.1.0",
     "hubot-pugme-reddit": "github:anupdhml/hubot-pugme-reddit",
