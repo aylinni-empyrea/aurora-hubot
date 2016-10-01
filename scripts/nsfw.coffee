@@ -8,57 +8,22 @@
 #
 # Dependencies:
 #
-#  url, cheerio, request
+#  lib/reddit
 #
 # Commands:
 #
 #  hubot nsfw pic
-#  hubot gif
-#  hubot wtf
+#  hubot nsfw gif
 
-url = require 'url'
-cheerio = require 'cheerio'
-request = require 'request'
-
-random = (limit=100) -> Math.floor ( Math.random() * limit )
+reddit = require '../lib/reddit.coffee'
 
 allowed_channels = process.env.HUBOT_NSFW_CHANNELS.split(',') if process.env.HUBOT_NSFW_CHANNELS?
 
 module.exports = (robot) ->
 
-  getRandomRedditPost = (msg, url) ->
-    msg.http(url)
-      .get() (err, res, body) ->
-
-        if err
-          msg.send 'Something bad happened!'
-          throw new Error(err)
-
-        result = JSON.parse(body)
-
-        urls = [ ]
-
-        subreddit = result.data.children[0].data.subreddit
-
-        for child in result.data.children
-          if child.data.domain != 'self.'+subreddit
-            urls.push(
-              {
-                title: "*#{child.data.title}* – " || ''
-                src: child.data.url
-              }
-            )
-
-        if urls.count <= 0
-          msg.send "Couldn't find anything? What's up reddit?"
-          return
-
-        msg.send urls[random(5)].title + urls[random(5)].src
-
-  # waits for the string "hubot nsfw" or "hubot hook me up" to occur
   robot.respond /nsfw (pic|gif)/i, (msg) ->
 
-    if allowed_channels isnt undefined and msg.message.room not in allowed_channels and msg.message.room[0] isnt 'D'
+    if allowed_channels isnt undefined and msg.message.room[0] isnt 'D'
       msg.send "I can\'t post nsfw here!"
       return
 
@@ -72,32 +37,13 @@ module.exports = (robot) ->
             msg.send 'http://titsnarse.co.uk' + JSON.parse(body).src
 
       when 'gif'
-        getRandomRedditPost msg, 'https://www.reddit.com/user/RyanSammy/m/gifs/top.json?t=week&limit=100'
 
-  robot.respond /kama(?: )sutra( of the week)?/i, (res) ->
-    o =
-      baseUrl: 'http://www.sofeminine.co.uk'
-      qs: {}
+        reddit.getPosts ({
+          subreddit: '/r/nsfw_gif'
+          type: 'link'
+          limit: 50
+          sort: 'hot'
+        }), (res) ->
 
-    if res.match[1] is 'of the week'
-      o.uri = '/couple/newlovemach/positionsemaine.asp'
-    else
-      o.uri = '/couple/newlovemach/afficheflash.asp'
-      o.qs = { position: random() }
+          msg.send reddit.format( reddit.random(res) )
 
-    request.get o, (e, r, b) ->
-
-      $ = cheerio.load b
-
-      ret =
-        attachments: [
-          title: $(".lm_content .posTitle").text() || ''
-          color: '#D37F97'
-          text: $(".lm_content > p.text_intro").text()
-          image_url: o.baseUrl + $(".lm_content .lm_posIllu > img").attr('src') || ''
-        ]
-
-      robot.emit 'slack.attachment', {
-        channel: res.message.room || res.envelope.room
-        content: ret.attachments
-      }
