@@ -61,7 +61,9 @@ module.exports = (robot) ->
           title_link: post.url
 
           mrkdwn_in: ['text']
+          # coffeelint: disable=max_line_length
           text: truncate(post.selftext, 90) + " <#{post.url}|_read more →_>" if post.is_self is true
+          # coffeelint: enable=max_line_length
 
           thumb_url: post.thumbnail if post.thumbnail?
 
