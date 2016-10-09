@@ -59,12 +59,10 @@ cuteQuotes = [
   ""
 ]
 
-react = (res, reaction) ->
-  robot.emit 'slack.reaction',
-  message: res.message
-  name: reaction
-
 module.exports = (robot) ->
+
+  react = (res, reaction) ->
+    robot.emit 'slack.reaction', res.message, reaction
 
   robot.hear /:penny:$/i, (msg) ->
     msg.send msg.random pennyiconQuotes
