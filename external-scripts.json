@@ -1,4 +1,5 @@
 [
+  "hubot-quote-database",
   "hubot-brain-redis-hash",
   "hubot-brain-inspect",
   "hubot-calculator",

@@ -23,6 +23,7 @@
     "hubot-plusplus": "github:ajacksified/hubot-plusplus",
     "hubot-pugme": "^0.1.0",
     "hubot-pugme-reddit": "github:anupdhml/hubot-pugme-reddit",
+    "hubot-quote-database": "^1.0.0",
     "hubot-reddit": "0.0.1",
     "hubot-reload-scripts": "github:deadsurgeon42/hubot-reload-scripts",
     "hubot-scripts": "^2.17.2",
