@@ -5,6 +5,7 @@
   "author": "General Ironwood",
   "description": "I'm combat ready!",
   "dependencies": {
+    "bing-image-scraper": "0.0.1",
     "hubot": "github:deadsurgeon42/hubot",
     "hubot-4chan": "0.0.1",
     "hubot-ambush": "0.0.3",

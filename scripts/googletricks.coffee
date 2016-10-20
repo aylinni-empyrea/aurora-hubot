@@ -1,11 +1,10 @@
 # Description:
-#   A way to interact with the Google Images API through freeloaderism, use at your own risk
+#   A way to interact with the Google Images API and tries Bing if API limit hit
 #
 # Configuration
 #   HUBOT_GOOGLE_CSE_KEY - Your Google developer API key
 #   HUBOT_GOOGLE_CSE_ID - The ID of your Custom Search Engine
 #   HUBOT_GOOGLE_SAFE_SEARCH - Optional. Search safety level.
-#   HUBOT_GOOGLE_IMAGES_FALLBACK_ID && HUBOT_GOOGLE_IMAGES_FALLBACK_KEY && HUBOT_GOOGLE_IMAGES_FALLBACK_PROXY
 #
 # Dependencies:
 #   request
@@ -15,30 +14,12 @@
 #   hubot animate me <query> - The same thing as `image me`, except adds a few parameters to try to return an animated GIF instead.
 
 request = require 'request'
+Scraper = require 'bing-image-scraper'
+altsearch = new Scraper()
 
-#acceptedColors = [ 'black', 'blue', 'brown', 'gray', 'green', 'pink', 'purple', 'teal', 'white', 'yellow' ]
-
-nsfw_rooms = ['nsfw']
+nsfw_rooms = process.env.HUBOT_NSFW_CHANNELS
 
 random = (a) -> return a[Math.floor(Math.random() * a.length)]
-
-pullAFast = (url, q, id, key, proxy, cb, animated) ->
-  console.log '[googletricks.coffee] WARN: shit the cops got us, gotta trick google'
-  if !id? || !key? || !proxy?
-    console.log '[googletricks.coffee] ERROR: fallback variables improperly configured'
-    return 'Configuration error'
-  else
-    q.key = key
-    q.cx = id
-
-    request ({
-      url: url
-      qs: q
-      proxy: proxy
-      }), (err, res, body) ->
-
-        #console.log random(JSON.parse(body).items).link
-        cb ensureResult random(JSON.parse(body).items).link, animated
 
 module.exports = (robot) ->
 
@@ -89,16 +70,25 @@ imageMe = (msg, query, animated, faces, cb) ->
     request opts, (err, res, body) ->
       switch res.statusCode
         when 403
-          msg.send "Whoopsie, daily search limit exceeded! :confounded:"
-          ###
-          pullAFast url,
-                    q,
-                    process.env.HUBOT_GOOGLE_IMAGES_FALLBACK_ID,
-                    process.env.HUBOT_GOOGLE_IMAGES_FALLBACK_KEY,
-                    process.env.HUBOT_GOOGLE_IMAGES_FALLBACK_PROXY,
-                    cb,
-                    animated
-          ###
+          #msg.send "Whoopsie, daily search limit exceeded! :confounded:"
+
+          query = query + ' gif' if animated? and animated is true
+          robot.logger.info 'Daily search limit exceeded, using scraper for query: ' + query
+
+          altsearch.list({
+            keyword: query
+            num: 20
+            nightmare:
+              show: false
+          })
+          .then ((res) ->
+
+            results = []
+
+            results.push r.url for r in res
+            cb ensureResult random(results), animated
+          )
+
         when 200
           cb ensureResult random(JSON.parse(body).items).link, animated
 
