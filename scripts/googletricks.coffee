@@ -17,7 +17,7 @@ request = require 'request'
 Scraper = require 'bing-image-scraper'
 altsearch = new Scraper()
 
-nsfw_rooms = process.env.HUBOT_NSFW_CHANNELS
+nsfw_rooms = process.env.HUBOT_NSFW_CHANNELS.split(',') if process.env.HUBOT_NSFW_CHANNELS?
 
 random = (a) -> return a[Math.floor(Math.random() * a.length)]
 
