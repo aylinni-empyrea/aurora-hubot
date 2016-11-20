@@ -10,7 +10,7 @@ if process.env.HUBOT_CHAT_LOG_PATH?
 else
   path = './'
 
-if (fs.statSync path).isDirectory is false
+if (fs.existsSync path) is false
   try
     fs.mkdirSync path
   catch e
