@@ -5,6 +5,7 @@
   "author": "General Ironwood",
   "description": "I'm combat ready!",
   "dependencies": {
+    "async": "^2.1.2",
     "bing-image-scraper": "0.0.1",
     "hubot": "github:deadsurgeon42/hubot",
     "hubot-4chan": "0.0.1",
@@ -32,7 +33,7 @@
     "hubot-suggest": "github:deadsurgeon42/hubot-suggest",
     "hubot-xkcd": "0.0.3",
     "hubot-youtube": "^1.0.2",
-    "request": "^2.73.0",
+    "request": "^2.79.0",
     "truncate": "^2.0.0"
   },
   "engines": {
